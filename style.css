@@ -2,7 +2,7 @@
     --bg: #242424;
     --cool-white: #f5f5f5;
     --selected: #56C200;
-    --occupied: #CE0000;
+    --occupied: #E39800;
 }
 html{
     font-size: 100%;
@@ -44,6 +44,7 @@ select {
     text-overflow: '';
     outline: none;
 }
+
 .flex {
     display: flex;
 }
@@ -59,12 +60,14 @@ select {
 .container {
     margin: 0 70px;
 }
-.occupied svg path, .occupied svg rect{
-    fill: var(--occupied) !important;
+.select {
+    filter: invert(.5) sepia(2) saturate(5) hue-rotate(45deg);
 }
-.selected svg path, .selected svg rect{
-    fill: var(--selected) !important;
+
+.occupied {
+    filter: invert(.5) sepia(2) saturate(5) hue-rotate(5deg);
 }
+
 #head {
     text-align: center;
     margin-top: 40px;
@@ -76,6 +79,7 @@ select {
     border-radius: 5px;
     padding: 0 12px;
 }
+
 
 .seats-info {
     display: flex;
@@ -101,13 +105,54 @@ select {
 .occupied-seat {
     background: var(--occupied);
 }
-.seats {
-    display: flex;
-}
+
 .margin-seats {
     margin-right: 51px;
 }
 
 .single-seat {
+    position: relative;
     margin-bottom: 22px;
+    cursor: pointer;
 }
+.single-seat.occupied {
+    cursor: not-allowed !important;
+}
+/* .first-class::after {
+    content: "1st Class";
+    position: absolute;
+    left: 50%;
+    top: 45px;
+    transform: translateX(-50%);
+    font-size: 0.5rem;
+    background: var(--bg);
+    padding: 3px ;
+
+}
+.second-class::after {
+    content: "2nd Class";
+    position: absolute;
+    left: 50%;
+    top: 45px;
+    transform: translateX(-50%);
+    font-size: 0.5rem;
+    background: var(--bg);
+    padding: 3px ;
+}
+.third-class::after {
+    content: "3rd Class";
+    position: absolute;
+    left: 50%;
+    top: 45px;
+    transform: translateX(-50%);
+    font-size: 0.5rem;
+    background: var(--bg);
+    padding: 3px ;
+} */
+
+@media screen and (max-width: 600px) {
+    .margin-seats {
+    margin-right: 0;
+    }
+}
+

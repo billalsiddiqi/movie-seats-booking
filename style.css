@@ -59,6 +59,12 @@ select {
 .container {
     margin: 0 70px;
 }
+.occupied svg path, .occupied svg rect{
+    fill: var(--occupied) !important;
+}
+.selected svg path, .selected svg rect{
+    fill: var(--selected) !important;
+}
 #head {
     text-align: center;
     margin-top: 40px;
